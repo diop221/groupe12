@@ -1,0 +1,76 @@
+name: dvwa-study
+x-web: &web
+  image: ghcr.io/digininja/dvwa@sha256:ed35515e9111801e6e386a6fbb11165508cc7f72e0cb8da4dbb3df70182986c6
+  environment: &environment
+    DB_SERVER: db
+    DEFAULT_SECURITY_LEVEL: low
+  volumes:
+    - ./infra/lab.ini:/usr/local/etc/php/conf.d/zz-lab.ini:ro
+  mem_limit: 512m
+  pids_limit: 128
+services:
+  reference:
+    <<: *web
+    environment:
+      <<: *environment
+      DB_SERVER: reference-db
+    networks: [reference]
+    volumes:
+      - ./infra/lab.ini:/usr/local/etc/php/conf.d/zz-lab.ini:ro
+      - ./infra/reference.ini:/usr/local/etc/php/conf.d/zzz-session.ini:ro
+      - reference-uploads:/var/www/html/hackable/uploads
+    depends_on:
+      reference-db: {condition: service_healthy}
+  corrections:
+    <<: *web
+    environment:
+      <<: *environment
+      DB_SERVER: corrections-db
+    networks: [corrections]
+    volumes:
+      - ./infra/lab.ini:/usr/local/etc/php/conf.d/zz-lab.ini:ro
+      - ./corrections/vulnerabilities:/var/www/html/vulnerabilities:ro
+      - api-vendor:/var/www/html/vulnerabilities/api/vendor
+      - ./infra/corrections.ini:/usr/local/etc/php/conf.d/zzz-session.ini:ro
+      - corrections-uploads:/var/www/html/hackable/uploads
+    depends_on:
+      corrections-db: {condition: service_healthy}
+  reference-db:
+    image: mariadb@sha256:80494b9810694179889f7281ec44ca928241df577159c0356a1070e2e94616a1
+    environment: &db-env
+      MARIADB_ROOT_PASSWORD: local-study-root
+      MARIADB_DATABASE: dvwa
+      MARIADB_USER: dvwa
+      MARIADB_PASSWORD: p@ssw0rd
+    volumes: [reference-db:/var/lib/mysql]
+    networks: [reference]
+    healthcheck: &health
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  corrections-db:
+    image: mariadb@sha256:80494b9810694179889f7281ec44ca928241df577159c0356a1070e2e94616a1
+    environment: *db-env
+    volumes: [corrections-db:/var/lib/mysql]
+    networks: [corrections]
+    healthcheck: *health
+  gateway:
+    image: nginx@sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
+    ports:
+      - '127.0.0.1:4280:4280'
+      - '127.0.0.1:4281:4281'
+    volumes:
+      - ./infra/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks: [access, reference, corrections]
+    depends_on: [reference, corrections]
+networks:
+  access: {}
+  reference: {internal: true}
+  corrections: {internal: true}
+volumes:
+  reference-db: {}
+  corrections-db: {}
+  reference-uploads: {}
+  corrections-uploads: {}
+  api-vendor: {}

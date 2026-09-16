@@ -1,0 +1,230 @@
+[
+  {
+    "module": "api",
+    "title": "API",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Dépendances Composer, réécriture Apache ; étudier les versions et routes API.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "authbypass",
+    "title": "Contournement des autorisations",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Entrée de menu réservée à admin ; comparer plusieurs comptes.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "bac",
+    "title": "Contrôle d’accès défaillant",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Présent dans le dépôt mais masqué dans le menu ; ouvrir directement /vulnerabilities/bac/.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "brute",
+    "title": "Force brute",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Mesurer tentatives, temporisation et verrouillage avec une petite liste locale.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "captcha",
+    "title": "CAPTCHA non sûr",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Clés reCAPTCHA et accès externe requis pour le parcours complet : indisponible hors ligne.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "cryptography",
+    "title": "Cryptographie",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Plusieurs sous-exercices ; inventorier aussi les pages ECB, oracle et jetons.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "csp",
+    "title": "Contournement de CSP",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Certains exemples dépendent de domaines externes ; navigateur requis.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "csrf",
+    "title": "CSRF",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Navigateur victime connecté et origine attaquante locale distincte.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "exec",
+    "title": "Injection de commandes",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Cible locale et fichier témoin dans le conteneur uniquement.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "fi",
+    "title": "Inclusion de fichiers",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Inclure traversée et inclusion locale ; inclusion distante avec serveur témoin local à préparer.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "javascript",
+    "title": "Attaques JavaScript",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Analyse du code client et vérification serveur ; navigateur requis.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "open_redirect",
+    "title": "Redirection ouverte",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Destination témoin locale et analyse de Location / navigation.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "sqli",
+    "title": "Injection SQL",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Requête, résultat et preuve de divulgation sur données DVWA.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "sqli_blind",
+    "title": "Injection SQL aveugle",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Comparer réponses booléennes et délais selon les sources du niveau.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "upload",
+    "title": "Téléversement non sûr",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Types, contenu, stockage et exécution : fichiers témoins inoffensifs.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "weak_id",
+    "title": "Identifiants de session faibles",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Échantillon de jetons ; prédictibilité et limites statistiques.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "xss_d",
+    "title": "XSS DOM",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Source et sink client, exécution dans un navigateur.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "xss_r",
+    "title": "XSS réfléchie",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Réponse HTTP et exécution dans un navigateur.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  },
+  {
+    "module": "xss_s",
+    "title": "XSS stockée",
+    "levels": [
+      "low",
+      "medium",
+      "high",
+      "impossible"
+    ],
+    "note": "Persistance et ouverture depuis une autre session victime.",
+    "status": "À analyser / exploiter / corriger / rejouer"
+  }
+]

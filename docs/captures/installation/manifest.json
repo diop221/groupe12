@@ -1,0 +1,62 @@
+[
+  {
+    "port": 4280,
+    "page": "connexion",
+    "url": "http://127.0.0.1:4280/login.php",
+    "title": "Login :: Damn Vulnerable Web Application (DVWA)"
+  },
+  {
+    "port": 4280,
+    "page": "accueil",
+    "url": "http://127.0.0.1:4280/index.php",
+    "title": "Welcome :: Damn Vulnerable Web Application (DVWA)"
+  },
+  {
+    "port": 4280,
+    "page": "configuration",
+    "url": "http://127.0.0.1:4280/setup.php",
+    "title": "Setup :: Damn Vulnerable Web Application (DVWA)"
+  },
+  {
+    "port": 4280,
+    "page": "securite",
+    "url": "http://127.0.0.1:4280/security.php",
+    "title": "DVWA Security :: Damn Vulnerable Web Application (DVWA)"
+  },
+  {
+    "port": 4280,
+    "page": "module-sqli",
+    "url": "http://127.0.0.1:4280/vulnerabilities/sqli/",
+    "title": "Vulnerability: SQL Injection :: Damn Vulnerable Web Application (DVWA)"
+  },
+  {
+    "port": 4281,
+    "page": "connexion",
+    "url": "http://127.0.0.1:4281/login.php",
+    "title": "Login :: Damn Vulnerable Web Application (DVWA)"
+  },
+  {
+    "port": 4281,
+    "page": "accueil",
+    "url": "http://127.0.0.1:4281/index.php",
+    "title": "Welcome :: Damn Vulnerable Web Application (DVWA)"
+  },
+  {
+    "port": 4281,
+    "page": "configuration",
+    "url": "http://127.0.0.1:4281/setup.php",
+    "title": "Setup :: Damn Vulnerable Web Application (DVWA)"
+  },
+  {
+    "port": 4281,
+    "page": "securite",
+    "url": "http://127.0.0.1:4281/security.php",
+    "title": "DVWA Security :: Damn Vulnerable Web Application (DVWA)"
+  },
+  {
+    "port": 4281,
+    "page": "module-sqli",
+    "url": "http://127.0.0.1:4281/vulnerabilities/sqli/",
+    "title": "Vulnerability: SQL Injection :: Damn Vulnerable Web Application (DVWA)"
+  }
+]

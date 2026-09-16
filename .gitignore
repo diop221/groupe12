@@ -1,0 +1,13 @@
+evidence/*
+!evidence/.gitkeep
+*.env
+
+# Environnement local et fichiers temporaires
+.report-venv/
+__pycache__/
+*.py[cod]
+.~lock.*#
+
+# Sources DVWA tierces, récupérées selon la procédure du README
+upstream/
+corrections/
