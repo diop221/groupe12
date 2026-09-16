@@ -65,5 +65,3 @@ Le CAPTCHA est inclus dans l'étude, mais son parcours complet nécessite des cl
 5. Implémenter notre correctif dans la copie de travail.
 6. Rejouer l'attaque et les usages légitimes via le proxy et, si nécessaire, un navigateur victime distinct.
 7. Conserver code, preuves, résultats et limites.
-
-Le précédent laboratoire Flask est conservé séparément et n'a pas été modifié.
